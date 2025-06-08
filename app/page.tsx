@@ -1,8 +1,6 @@
-import About from "@/components/about";
-import StatsBar from "@/components/bar";
+import About from "@/components/about"; 
 import Footer from "@/components/footer";
-import Header from "@/components/header"; 
-import Projects from "@/components/projects";
+import Header from "@/components/header";  
 import ShowCaseAfterContent from "@/components/showcase";
 import { Suspense } from "react";
 
