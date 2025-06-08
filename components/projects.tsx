@@ -54,7 +54,7 @@ const Projects = () => {
               <div className="relative w-full pt-[56.25%]">
                 <iframe
                   src={value.videoUrl}
-                  className="absolute inset-0 w-full h-full rounded-md shadow-lg border-none"
+                  className="absolute cursor-pointer inset-0 w-full h-full rounded-md shadow-lg border-none"
                   style={{
                     position: 'absolute',
                     top: '-1px',
@@ -69,8 +69,7 @@ const Projects = () => {
                 ></iframe>
               </div>
             </div>
-
-            {/* Text Content */}
+            
             <div
               className="w-full sm:w-1/2 px-5 flex justify-center text-center sm:text-left"
               data-aos="fade-up"
