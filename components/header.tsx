@@ -78,7 +78,7 @@ const Header = () => {
           </button>
         </div>
         <div
-          className={`fixed inset-0 bg-[#0f0f0f] h-[100dvh]  z-50 transition-transform duration-500 ${
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm h-[100dvh]  z-50 transition-transform duration-500 ${
             isMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
