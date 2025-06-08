@@ -35,18 +35,15 @@ body {
 .hamburger-line:last-child {
   @apply mb-0;
 }
-
-/* Hover effect without layout shift */
+ 
 button:hover .hamburger-line {
   @apply bg-gray-300;
 }
-
-/* Smooth transitions for all interactive elements */
+ 
 button, a {
   transition: all 0.2s ease-out;
 }
-
-/* Custom scrollbar */
+ 
 ::-webkit-scrollbar {
   width: 8px;
 }
