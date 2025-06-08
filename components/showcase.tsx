@@ -20,7 +20,7 @@ export const Collections = [
     {
         id:2,
         beforeImage: "/img_2_before.jpg", 
-        afterImage: "/img_2.png",  
+        afterImage: "/img_2_after.jpg",  
         title: "Full CG Shot",
         description: "bla bla bla bla bla",
     },
