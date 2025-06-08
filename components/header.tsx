@@ -20,7 +20,6 @@ const Header = () => {
   };
   useEffect(() => {
     if (isMenuOpen) {
-      // Calculate scrollbar width
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       
       document.body.style.overflow = 'hidden';
@@ -28,9 +27,7 @@ const Header = () => {
     } else {
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
-    }
-
-    // Cleanup on unmount
+    } 
     return () => {
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
@@ -122,12 +119,12 @@ const Header = () => {
       </div>
 
       <div className="bg-[#0f0f0f] py-20">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto w-full px-6 text-center">
           <h1 className="text-[50px] font-bold mb-4 text-white">
             Anonymous AnuraG - VFX Generalist
           </h1>
           <button
-            className="bg-white text-black px-8 py-3 rounded-none hover:bg-gray-200 transition-colors uppercase tracking-wider font-medium"
+            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#d39b00] hover:border-[#d39b00] hover:text-[#202020] transition-colors uppercase tracking-wider"
             onClick={handleScroll}
           >
             Latest Work
