@@ -1,30 +1,34 @@
-'use client'
-import Link from "next/link"
+"use client";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f0f0f] text-[#efefef] py-16 px-6">
-      <div className="max-w-4xl mx-auto text-center space-y-8">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">Like what you see?</h2>
-          <p className="text-lg md:text-xl text-gray-300">contact me and let&#39;s work together</p>
+    <footer className="bg-[#0f0f0f] text-[#efefef] py-8 md:py-16 px-4 md:px-6">
+      <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+        <div className="space-y-3 md:space-y-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
+            Like what you see?
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">
+            contact me and let&#39;s work together
+          </p>
         </div>
 
-        <div className="space-y-2">
-          <p className="text-lg">anurag@gmail.com</p>
-          <p className="text-lg">+420 602 293 042</p>
+        <div className="space-y-1 md:space-y-2">
+          <p className="text-base sm:text-lg">anurag@gmail.com</p>
+          <p className="text-base sm:text-lg">+420 602 293 042</p>
         </div>
 
         <div className="pt-4">
           <button
             type="button"
-            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#5668e2] hover:border-[#5668e2] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            className="bg-transparent cursor-pointer border-2 md:border-[4px] text-[16px] md:text-[20px] font-bold h-[50px] md:h-[65px] w-[200px] md:w-[230px] px-6 md:px-8 py-2 md:py-3 rounded-none hover:bg-[#5668e2] hover:border-[#5668e2] hover:text-[#202020] transition-colors uppercase tracking-wider"
           >
             About Me
           </button>
         </div>
 
-        <div className="flex justify-center items-center space-x-20 pt-8">
+        <div className="flex justify-center items-center space-x-8 sm:space-x-12 md:space-x-16 lg:space-x-20 pt-6 md:pt-8">
           <Link href="#" className="hover:opacity-70 transition-opacity">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
               <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
@@ -57,5 +61,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
