@@ -1,4 +1,5 @@
 import Header from "@/components/header"; 
+import Projects from "@/components/projects";
 import { Suspense } from "react";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
       <Suspense fallback={<div className="text-center py-10">Anurag&apos;s Portfolio is loading...</div>}>
           {/* <Navbar /> */}
           <Header />
-          {/* <Projects /> */}
+          <Projects />
           {/* <Bar/> */}
           {/* <About /> */}
           {/* <Contact /> */}

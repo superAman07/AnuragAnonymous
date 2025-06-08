@@ -97,7 +97,7 @@ const Header = () => {
 
       <div className="relative h-[70vh] w-full overflow-hidden">
         <video
-          autoPlay
+          // autoPlay
           muted
           loop
           className="absolute top-0 left-0 w-full h-[70vh] object-cover"
@@ -120,10 +120,11 @@ const Header = () => {
 
       <div className="bg-[#0f0f0f] py-20">
         <div className="container mx-auto w-full px-6 text-center">
-          <h1 className="text-[50px] font-bold mb-4 text-white">
+          <h1 className="text-[50px] font-bold mb-4 text-[#efefef]">
             Anonymous AnuraG - VFX Generalist
           </h1>
           <button
+            type="button"
             className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#d39b00] hover:border-[#d39b00] hover:text-[#202020] transition-colors uppercase tracking-wider"
             onClick={handleScroll}
           >
