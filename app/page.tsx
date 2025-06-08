@@ -10,13 +10,11 @@ export default function Home() {
   return (
     <div className="w-full overflow-hidden bg-[#0f0f0f]">
       <Suspense fallback={<div className="text-center py-10">Anurag&apos;s Portfolio is loading...</div>}>
-          {/* <Navbar /> */}
           <Header />
           <ShowCaseAfterContent />
           <StatsBar/>
           <Projects />
           <About />
-          {/* <Contact /> */}
           <Footer /> 
       </Suspense>
     </div>

@@ -49,6 +49,7 @@ const Header = () => {
         </div>
         <div className="absolute top-8 right-5 z-[60]">
           <button
+            type="button"
             className="w-12 h-12 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
