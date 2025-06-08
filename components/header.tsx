@@ -106,7 +106,7 @@ const Header = () => {
           <source src="/portfolio-video.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-[black/30]"></div>
+        <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
           <Image
             src="/down-arrow.png"
