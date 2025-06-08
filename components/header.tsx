@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logoSrc from "@/public/logo.png";
 
@@ -16,8 +16,26 @@ const Header = () => {
   };
    const handleMenuToggle = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsMenuOpen(!isMenuOpen); 
+    setIsMenuOpen(!isMenuOpen);  
   };
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Calculate scrollbar width
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header id="home" className="relative z-0 bg-[#0f0f0f] min-h-screen">
@@ -62,18 +80,18 @@ const Header = () => {
           </button>
         </div>
         <div
-          className={`fixed inset-0 bg-[#0f0f0f] h-[100dvh] overflow-hidden z-50 transition-transform duration-500 ${
+          className={`fixed inset-0 bg-[#0f0f0f] h-[100dvh]  z-50 transition-transform duration-500 ${
             isMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <nav className="h-full flex flex-col items-center justify-center text-white">
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-gray-300">
+          <nav className="h-full flex flex-col items-center justify-center text-[#efefef]">
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#d39b00]">
               ANIMATIONS
             </a>
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-gray-300">
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#d39b00]">
               STILL IMAGES
             </a>
-            <a href="#" className="text-5xl font-bold hover:text-gray-300">
+            <a href="#" className="text-5xl font-bold hover:text-[#d39b00]">
               CONTACT
             </a>
           </nav>
@@ -105,16 +123,9 @@ const Header = () => {
 
       <div className="bg-[#0f0f0f] py-20">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
-            Anurag Pal
+          <h1 className="text-[50px] font-bold mb-4 text-white">
+            Anonymous AnuraG - VFX Generalist
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white">
-            VFX Artist & Content Creator
-          </p>
-          <p className="text-lg md:text-xl mb-12 text-white">
-            Design, craft & creativity for videos, games, advertising.
-          </p>
-
           <button
             className="bg-white text-black px-8 py-3 rounded-none hover:bg-gray-200 transition-colors uppercase tracking-wider font-medium"
             onClick={handleScroll}
