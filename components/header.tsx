@@ -14,6 +14,17 @@ const Header = () => {
       });
     }
   };
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(false);  
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
    const handleMenuToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(!isMenuOpen);  
@@ -89,7 +100,7 @@ const Header = () => {
             <a href="#" className="text-5xl font-bold mb-8 hover:text-[#5668e2]">
               STILL IMAGES
             </a>
-            <a href="#" className="text-5xl font-bold hover:text-[#5668e2]">
+            <a href="#contact" onClick={handleContactClick} className="text-5xl font-bold hover:text-[#5668e2]">
               CONTACT
             </a>
           </nav>
