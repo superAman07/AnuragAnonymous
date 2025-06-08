@@ -52,7 +52,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
     return (
         <div 
             ref={sliderRef}
-            className="relative w-full aspect-[16/9] cursor-col-resize overflow-hidden"
+            className="relative w-[590px] h-[440px] cursor-col-resize overflow-hidden"
             onMouseMove={handleMove}
             onTouchMove={(e) => handleMove(e.touches[0])}
         >
@@ -60,9 +60,9 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
                 <Image
                     src={afterImage}
                     alt={`${title} After`}
-                    className="object-cover w-full h-full"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    width={590}
+                    height={440}
                     priority
                 />
             </div>
@@ -77,9 +77,9 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
                     <Image
                         src={beforeImage}
                         alt={`${title} Before`}
-                        className="object-cover w-full h-full"
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                        width={590}
+                        height={440}
                         priority
                     />
                 </div>
