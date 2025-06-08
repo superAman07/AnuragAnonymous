@@ -1,40 +1,30 @@
 'use client'
 
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import React from 'react'; 
 import Image from 'next/image';
 
 export const Collections = [
     {
         id:1,
-        videoUrl:"/img_1.png",
+        imageUrl:"/img_1.png",
         title: "Compositing",
         description: "bla bla bla bla bla",
     },
     {
         id:2,
-        videoUrl:"/img_2.png",
+        imageUrl:"/img_2.png",
         title: "Full CG Shot",
         description: "bla bla bla bla bla",
     },
     {
         id:3,
-        videoUrl:"/img_3.png",
+        imageUrl:"/img_3.png",
         title: "Product Visualization",
         description: "bla bla bla bla bla",
     }
 ]
 
 const ShowCaseAfterContent = () => { 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,  
-      easing: 'ease-in',  
-      once: false, 
-      mirror: true,  
-    });
-  }, []);
 
   return (
     <section id="projects" className="p-5 bg-[#0f0f0f]">
@@ -45,20 +35,20 @@ const ShowCaseAfterContent = () => {
             data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
             className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center w-full lg:w-4/5 gap-4`}
           > 
-            <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
-              <div className="relative w-full pt-[56.25%]">
+            <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform">
+              <div className="relative w-full pt-[86.25%]">
                 <Image
-                  src={value.videoUrl}
+                  src={value.imageUrl}
                   alt={value.title}
-                  className="absolute cursor-pointer inset-0 w-full h-full rounded-md shadow-lg border-none"
+                  className="absolute cursor-pointer inset-0 w-full h-full shadow-lg border-none"
                   style={{
                     position: 'absolute',
                     top: '-1px',
                     left: '-1px',
                     right: '-1px',
                     bottom: '-1px',
-                    width: 'calc(100% + 1px)',
-                    height: 'calc(100% + 1px)',
+                    width: '595px',
+                    height: '440px',
                   }}
                   width={200}
                   height={200}
