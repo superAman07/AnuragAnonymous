@@ -1,0 +1,130 @@
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import logoSrc from "@/public/logo.png";
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleScroll = () => {
+    const nextSection = document.getElementById("projects");
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+   const handleMenuToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(!isMenuOpen); 
+  };
+
+  return (
+    <header id="home" className="relative z-0 bg-[#0f0f0f] min-h-screen">
+      <div className="flex justify-between absolute top-5 px-5  z-50 w-full h-[100px]">
+        <div className="w-[115px] h-[100px] relative z-[100]">
+          <Image
+            src={logoSrc}
+            alt="Logo"
+            width={115}
+            height={100}
+            className="object-contain mix-blend-color-dodge z-[100]"
+            priority
+          />
+        </div>
+        <div className="absolute top-8 right-5 z-[60]">
+          <button
+            className="w-12 h-12 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
+            onClick={handleMenuToggle}
+            aria-label="Toggle menu"
+          >
+            <div className="relative w-8 h-6 flex flex-col justify-center">
+              <span
+                className={`hamburger-line transform transition-all duration-300 ease-out ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5"
+                    : "translate-y-0"
+                }`}
+              ></span>
+              <span
+                className={`hamburger-line transition-all duration-300 ease-out ${
+                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                }`}
+              ></span>
+              <span
+                className={`hamburger-line transform transition-all duration-300 ease-out ${
+                  isMenuOpen
+                    ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5"
+                    : "translate-y-0"
+                }`}
+              ></span>
+            </div>
+          </button>
+        </div>
+        <div
+          className={`fixed inset-0 bg-[#0f0f0f] h-[100dvh] overflow-hidden z-50 transition-transform duration-500 ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
+          <nav className="h-full flex flex-col items-center justify-center text-white">
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-gray-300">
+              ANIMATIONS
+            </a>
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-gray-300">
+              STILL IMAGES
+            </a>
+            <a href="#" className="text-5xl font-bold hover:text-gray-300">
+              CONTACT
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div className="relative h-[70vh] w-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute top-0 left-0 w-full h-[70vh] object-cover"
+          id="background-video"
+        >
+          <source src="/portfolio-video.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-[black/30]"></div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+          <Image
+            src="/down-arrow.png"
+            alt="Down arrow"
+            width={40}
+            height={40}
+            className="filter invert brightness-200 animate-bounce cursor-pointer"
+          />
+        </div>
+      </div>
+
+      <div className="bg-[#0f0f0f] py-20">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
+            Anurag Pal
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white">
+            VFX Artist & Content Creator
+          </p>
+          <p className="text-lg md:text-xl mb-12 text-white">
+            Design, craft & creativity for videos, games, advertising.
+          </p>
+
+          <button
+            className="bg-white text-black px-8 py-3 rounded-none hover:bg-gray-200 transition-colors uppercase tracking-wider font-medium"
+            onClick={handleScroll}
+          >
+            Latest Work
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
