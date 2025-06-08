@@ -12,8 +12,7 @@ export default function Home() {
       <Suspense fallback={<div className="text-center py-10">Anurag&apos;s Portfolio is loading...</div>}>
           <Header />
           <ShowCaseAfterContent />
-          <StatsBar/>
-          <Projects />
+
           <About />
           <Footer /> 
       </Suspense>

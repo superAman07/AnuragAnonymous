@@ -127,9 +127,9 @@ const Header = () => {
           </h1>
           <button
             type="button"
-            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#d39b00] hover:border-[#d39b00] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            className="bg-transparent cursor-pointer border-[4px] text-[#5668e2] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#d39b00] hover:border-[#d39b00] hover:text-[#202020] transition-colors uppercase tracking-wider"
           >
-            Latest Work
+            ShowReel
           </button>
         </div>
       </div>
