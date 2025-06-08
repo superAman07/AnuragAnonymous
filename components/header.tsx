@@ -97,7 +97,7 @@ const Header = () => {
 
       <div className="relative h-[70vh] w-full overflow-hidden">
         <video
-          // autoPlay
+          autoPlay
           muted
           loop
           className="absolute top-0 left-0 w-full h-[70vh] object-cover"
@@ -109,6 +109,7 @@ const Header = () => {
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
           <Image
+            onClick={handleScroll}
             src="/down-arrow.png"
             alt="Down arrow"
             width={40}
@@ -126,7 +127,6 @@ const Header = () => {
           <button
             type="button"
             className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#d39b00] hover:border-[#d39b00] hover:text-[#202020] transition-colors uppercase tracking-wider"
-            onClick={handleScroll}
           >
             Latest Work
           </button>

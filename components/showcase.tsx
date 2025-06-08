@@ -3,33 +3,34 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import Image from 'next/image';
 
 export const Collections = [
     {
         id:1,
-        videoUrl:"https://www.youtube.com/embed/4YWx5DkBfH4?si=j0nJTOjyE15WtaVI",
-        title: "Beyond Military",
-        description: "825k+ Views",
+        videoUrl:"/img_1.png",
+        title: "Compositing",
+        description: "bla bla bla bla bla",
     },
     {
         id:2,
-        videoUrl:"https://www.youtube.com/embed/LaJ0Gmp_Sik?si=LJBB59H47WZiiezi",
-        title: "Beyond Military",
-        description: "100k+ Views",
+        videoUrl:"/img_2.png",
+        title: "Full CG Shot",
+        description: "bla bla bla bla bla",
     },
     {
         id:3,
-        videoUrl:"https://drive.google.com/file/d/1TO59ZuZivDENubR4Buk-2A_bkyGf-Nof/preview",
-        title: "MegaBuilds",
-        description: "Trial Edit",
+        videoUrl:"/img_3.png",
+        title: "Product Visualization",
+        description: "bla bla bla bla bla",
     }
 ]
 
-const Projects = () => { 
+const ShowCaseAfterContent = () => { 
   useEffect(() => {
     AOS.init({
       duration: 1000,  
-      easing: 'ease-in-out',  
+      easing: 'ease-in',  
       once: false, 
       mirror: true,  
     });
@@ -37,12 +38,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="p-5 bg-[#0f0f0f]">
-      <h2
-        className="text-3xl md:text-4xl text-[#efefef] font-bold text-center mb-10"
-        data-aos="fade-in"
-      >
-        Editing Work
-      </h2>
       <div className="flex flex-col items-center space-y-16">
         {Collections.map((value, index) => (
           <div
@@ -52,8 +47,9 @@ const Projects = () => {
           > 
             <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
               <div className="relative w-full pt-[56.25%]">
-                <iframe
+                <Image
                   src={value.videoUrl}
+                  alt={value.title}
                   className="absolute cursor-pointer inset-0 w-full h-full rounded-md shadow-lg border-none"
                   style={{
                     position: 'absolute',
@@ -64,9 +60,10 @@ const Projects = () => {
                     width: 'calc(100% + 1px)',
                     height: 'calc(100% + 1px)',
                   }}
+                  width={200}
+                  height={200}
                   title={value.title}
-                  allowFullScreen
-                ></iframe>
+                />
               </div>
             </div>
             
@@ -90,4 +87,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ShowCaseAfterContent;
