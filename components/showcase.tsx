@@ -52,7 +52,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
     return (
         <div 
             ref={sliderRef}
-            className="relative w-[590px] h-[440px] cursor-col-resize overflow-hidden"
+            className="relative w-full max-w-[590px] aspect-[590/440] cursor-col-resize overflow-hidden mx-auto"
             onMouseMove={handleMove}
             onTouchMove={(e) => handleMove(e.touches[0])}
         >
@@ -60,9 +60,9 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
                 <Image
                     src={afterImage}
                     alt={`${title} After`}
-                    className="object-cover"
-                    width={590}
-                    height={440}
+                    className="object-cover w-full h-full"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+                    fill
                     priority
                 />
             </div>
@@ -77,26 +77,26 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
                     <Image
                         src={beforeImage}
                         alt={`${title} Before`}
-                        className="object-cover"
-                        width={590}
-                        height={440}
+                        className="object-cover w-full h-full"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+                        fill
                         priority
                     />
                 </div>
             </div>
 
             <div 
-                className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize"
+                className="absolute top-0 bottom-0 w-0.5 md:w-1 bg-white cursor-col-resize"
                 style={{ 
                     left: `${sliderPosition}%`,
                     transform: 'translateX(-50%)',
                 }}
             >
               
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-                    <div className="w-6 h-6 flex items-center justify-center">
-                        <span className="block w-4 h-1 bg-gray-800 rotate-90"></span>
-                        <span className="block w-4 h-1 bg-gray-800"></span>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+                    <div className="w-4 h-4 md:w-6 md:h-6 flex items-center justify-center">
+                        <span className="block w-3 h-0.5 md:w-4 md:h-1 bg-gray-800 rotate-90"></span>
+                        <span className="block w-3 h-0.5 md:w-4 md:h-1 bg-gray-800"></span>
                     </div>
                 </div>
             </div>
@@ -106,14 +106,14 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }:BeforeProps) => {
 
 const ShowCaseAfterContent = () => { 
     return (
-        <section id="projects" className="p-5 bg-[#0f0f0f]">
-            <div className="flex flex-col items-center space-y-16">
+        <section id="projects" className="p-4 md:p-5 bg-[#0f0f0f]">
+            <div className="flex flex-col items-center space-y-8 md:space-y-16">
                 {Collections.map((value, index) => (
                     <div
                         key={value.id}
-                        className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center w-full lg:w-4/5 gap-4`}
+                        className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center w-full lg:w-4/5 gap-4 md:gap-8`}
                     > 
-                        <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300">
+                        <div className="flex-shrink-0 w-full lg:w-1/2 transition-transform duration-300">
                             <BeforeAfterSlider
                                 beforeImage={value.beforeImage}
                                 afterImage={value.afterImage}
@@ -121,12 +121,12 @@ const ShowCaseAfterContent = () => {
                             />
                         </div>
                         
-                        <div className="w-full sm:w-1/2 px-5 flex justify-center text-center sm:text-left">
+                        <div className="w-full lg:w-1/2 px-4 md:px-5 flex justify-center text-center lg:text-left">
                             <div className="flex flex-col">
-                                <h3 className="text-3xl sm:text-2xl md:text-4xl font-semibold text-[#efefef] transition-transform duration-300">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#efefef] transition-transform duration-300">
                                     {value.title}
                                 </h3>
-                                <p className="text-[#5862a5] text-lg sm:text-xl mt-3 leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl mt-2 md:mt-3 leading-relaxed text-[#5862a5]">
                                     {value.description}
                                 </p>
                             </div>
