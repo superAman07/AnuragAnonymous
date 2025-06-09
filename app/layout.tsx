@@ -8,25 +8,25 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/anurag-circular.jpg",
+        url: "/anurag-circular.png",
         sizes: "32x32",
         type: "image/jpg",
       },
       {
-        url: "/anurag-circular.jpg",
+        url: "/anurag-circular.png",
         sizes: "16x16",
         type: "image/jpg",
       },
     ],
-    shortcut: { url: "/anurag-circular.jpg" },
+    shortcut: { url: "/anurag-circular.png" },
     apple: {
-      url: "/anurag-circular.jpg",
+      url: "/anurag-circular.png",
       sizes: "180x180",
       type: "image/jpg",
     },
     other: {
       rel: "icon",
-      url: "/anurag-circular.jpg",
+      url: "/anurag-circular.png",
     },
   },
 };
