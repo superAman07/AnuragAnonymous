@@ -176,10 +176,10 @@ const ShowCaseAfterContent = () => {
 
             <div className="w-full lg:w-1/2 px-4 md:px-5 flex justify-center text-center lg:text-left">
               <div className="flex flex-col space-y-0">
-                <h3 className="text-3xl sm:text-3xl md:text-5xl font-semibold text-[#efefef] transition-transform duration-300 leading-none tracking-[-0.06em]">
+                <h3 className="text-3xl sm:text-3xl md:text-5xl mb-1 font-semibold text-[#efefef] transition-transform duration-300 leading-none tracking-[-0.06em]">
                   {value.title}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl mt-0 md:mt-0 leading-tight text-[#4b70f5] tracking-[-0.06em]">
+                <p className="text-base sm:text-lg md:text-xl mt-1 md:mt-1 leading-tight text-[#4b70f5] tracking-[-0.06em]">
                   {value.description}
                 </p>
               </div>
