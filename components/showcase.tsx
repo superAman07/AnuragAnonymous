@@ -34,16 +34,23 @@ export const Collections = [
 ];
 const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
   const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const handleMoveStart = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    handleMove(e);
+  };
+
+  const handleMoveEnd = () => {
+    setIsDragging(false);
+  };
 
   interface HandleMoveEvent {
     clientX: number;
   }
 
-  const handleMove = (
-    e: React.MouseEvent<HTMLDivElement> | HandleMoveEvent
-  ) => {
-    if (sliderRef.current) {
+  const handleMove = (e: React.MouseEvent<HTMLDivElement> | HandleMoveEvent) => {
+    if (isDragging && sliderRef.current) {
       const rect = sliderRef.current.getBoundingClientRect();
       const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
       const percent = (x / rect.width) * 100;
@@ -55,8 +62,13 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
     <div
       ref={sliderRef}
       className="relative w-full max-w-[590px] aspect-[590/440] cursor-col-resize overflow-hidden mx-auto"
+      onMouseDown={handleMoveStart}
+      onMouseUp={handleMoveEnd}
+      onMouseLeave={handleMoveEnd}
       onMouseMove={handleMove}
-      onTouchMove={(e) => handleMove(e.touches[0])}
+      onTouchStart={() => setIsDragging(true)}
+      onTouchEnd={() => setIsDragging(false)}
+      onTouchMove={(e) => isDragging && handleMove(e.touches[0])}
     >
       <div className="absolute inset-0">
         <Image
@@ -73,6 +85,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
         className="absolute inset-0"
         style={{
           clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+          pointerEvents: isDragging ? 'none' : 'auto'
         }}
       >
         <div className="absolute inset-0">
@@ -88,7 +101,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
       </div>
 
       <div
-        className="absolute top-0 bottom-0 w-[1px] bg-transparent cursor-col-resize"
+        className={`absolute top-0 bottom-0 w-[1px] bg-transparent ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         style={{
           left: `${sliderPosition}%`,
           transform: "translateX(-50%)",
