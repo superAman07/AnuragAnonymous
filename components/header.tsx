@@ -125,7 +125,8 @@ const Header = () => {
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-[70vh] object-cover"
+          playsInline
+          className="absolute top-0 left-0 w-full h-[70vh] object-cover z-[1]"
           id="background-video"
         >
           <source src="/portfolio-video.mp4" type="video/mp4" />
