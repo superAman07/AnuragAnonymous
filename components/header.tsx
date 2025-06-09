@@ -63,7 +63,18 @@ const Header = () => {
   return (
     <header id="home" className="relative bg-[#0f0f0f] min-h-screen">
       <div className="header-container flex fixed justify-between items-center top-5 px-5  z-50 w-full h-[100px]  ">
-        <div className="w-[115px] h-[100px] relative z-[100]">
+        <Link
+          href="#home"
+          scroll={false}
+          onClick={(e) => {
+            e.preventDefault();
+            const home = document.getElementById("home");
+            if (home) {
+              home.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }}
+          className="w-[115px] h-[100px] relative z-[100]"
+        >
           <Image
             src={logoSrc}
             alt="Logo"
@@ -72,7 +83,7 @@ const Header = () => {
             className="object-contain mix-blend-color-dodge z-[100]"
             priority
           />
-        </div>
+        </Link>
         <div className="relative flex justify-center items-center  right-5 z-[60]">
           <button
             type="button"
@@ -148,19 +159,17 @@ const Header = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-66 md:-mt-20 text-center md:text-left">
           <div className="relative text-[#efefef] flex flex-col justify-center z-30 mt-40 h-full items-center md:items-start">
-            {["Hiii!", "this is Anurag.."].map(
-              (text, index) => (
-                <motion.p
-                  key={index}
-                  className="text-xl md:text-3xl mt-1 font-semibold tracking-wide"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.5 + index * 0.5 }}
-                >
-                  {text}
-                </motion.p>
-              )
-            )}
+            {["Hiii!", "this is Anurag.."].map((text, index) => (
+              <motion.p
+                key={index}
+                className="text-xl md:text-3xl mt-1 font-semibold tracking-wide"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 + index * 0.5 }}
+              >
+                {text}
+              </motion.p>
+            ))}
           </div>
         </div>
 
