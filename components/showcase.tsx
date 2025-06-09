@@ -36,7 +36,9 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
+
   const handleMoveStart = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setIsDragging(true);
     handleMove(e);
   };
@@ -66,9 +68,13 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
       onMouseUp={handleMoveEnd}
       onMouseLeave={handleMoveEnd}
       onMouseMove={handleMove}
-      onTouchStart={() => setIsDragging(true)}
+      onTouchStart={(e) => {
+        e.preventDefault();
+        setIsDragging(true);
+      }} 
       onTouchEnd={() => setIsDragging(false)}
       onTouchMove={(e) => isDragging && handleMove(e.touches[0])}
+      draggable="false"
     >
       <div className="absolute inset-0">
         <Image
@@ -78,6 +84,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
           fill
           priority
+          draggable="false"
         />
       </div>
 
@@ -96,6 +103,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
             fill
             priority
+            draggable="false"
           />
         </div>
       </div>
