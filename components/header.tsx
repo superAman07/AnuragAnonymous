@@ -31,24 +31,36 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);  
   };
   useEffect(() => {
+    const body = document.body;
+    const header = document.querySelector('.header-container');
+    
     if (isMenuOpen) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    } else {
-      document.body.style.overflow = 'unset';
-      document.body.style.paddingRight = '0px';
-    } 
+      body.style.paddingRight = `${scrollbarWidth}px`;
+      if (header) {
+        (header as HTMLElement).style.paddingRight = `${scrollbarWidth + 23}px`;  
+      }
+      body.style.overflow = 'hidden';
+    } else { 
+      body.style.overflow = '';
+      body.style.paddingRight = '';
+      if (header) {
+        (header as HTMLElement).style.paddingRight = '23px';
+      }
+    }
     return () => {
-      document.body.style.overflow = 'unset';
-      document.body.style.paddingRight = '0px';
+      body.style.overflow = '';
+      body.style.paddingRight = '';
+      if (header) {
+        (header as HTMLElement).style.paddingRight = '23px';
+      }
     };
   }, [isMenuOpen]);
 
   return (
-    <header id="home" className="relative z-0 bg-[#0f0f0f] min-h-screen">
-      <div className="flex fixed justify-between top-5 px-5  z-50 w-full h-[100px]">
+    <header id="home" className="relative bg-[#0f0f0f] min-h-screen">
+      <div className="header-container flex fixed justify-between items-center top-5 px-5  z-50 w-full h-[100px]  ">
         <div className="w-[115px] h-[100px] relative z-[100]">
           <Image
             src={logoSrc}
@@ -66,11 +78,11 @@ const Header = () => {
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
           >
-            <div className="relative w-8 h-8 flex flex-col justify-center">
+            <div className="relative w-8 h-8 flex flex-col justify-center items-center">
               <span
                 className={`hamburger-line transform transition-all duration-300 ease-out ${
                   isMenuOpen
-                    ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5"
+                    ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
                     : "translate-y-0"
                 }`}
               ></span>
@@ -82,7 +94,7 @@ const Header = () => {
               <span
                 className={`hamburger-line transform transition-all duration-300 ease-out ${
                   isMenuOpen
-                    ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5"
+                    ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
                     : "translate-y-0"
                 }`}
               ></span>
