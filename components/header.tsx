@@ -120,13 +120,13 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="relative h-[70vh] w-full overflow-hidden">
+      <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-[70vh] object-cover z-[1]"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[1]"
           id="background-video"
         >
           <source src="/portfolio-video.mp4" type="video/mp4" />
@@ -145,21 +145,21 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-[#0f0f0f] py-20">
-        <div className="container mx-auto w-full px-6 text-center">
-          <h1 className="text-[50px] font-bold mb-4 text-[#efefef]">
-            Anonymous AnuraG - VFX Generalist
-          </h1>
-          <Link href="https://www.youtube.com/@AnonymousAnuraG/videos" target="_blank">
-            <button
-              type="button"
-              className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
-            >
-              ShowReel
-            </button>
-          </Link>
-        </div>
+    <div className="bg-[#0f0f0f] py-10 sm:py-16 md:py-20">
+      <div className="container mx-auto w-full px-4 sm:px-6 text-center">
+        <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
+          Anonymous AnuraG - VFX Generalist
+        </h1>
+        <Link href="https://www.youtube.com/@AnonymousAnuraG/videos" target="_blank">
+          <button
+            type="button"
+            className="bg-transparent cursor-pointer border-2 sm:border-3 md:border-[4px] text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-bold h-[45px] sm:h-[55px] md:h-[65px] w-[180px] sm:w-[200px] md:w-[230px] px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
+          >
+            ShowReel
+          </button>
+        </Link>
       </div>
+    </div>
     </header>
   );
 };
