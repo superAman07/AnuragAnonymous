@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="pt-4">
           <button
             type="button"
-            className="bg-transparent cursor-pointer border-2 md:border-[4px] text-[16px] md:text-[20px] font-bold h-[50px] md:h-[65px] w-[200px] md:w-[230px] px-6 md:px-8 py-2 md:py-3 rounded-none hover:bg-[#5668e2] hover:border-[#5668e2] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            className="bg-transparent cursor-pointer border-2 md:border-[4px] text-[16px] md:text-[20px] font-bold h-[50px] md:h-[65px] w-[200px] md:w-[230px] px-6 md:px-8 py-2 md:py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
           >
             About Me
           </button>

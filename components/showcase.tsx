@@ -158,7 +158,7 @@ const ShowCaseAfterContent = () => {
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#efefef] transition-transform duration-300">
                   {value.title}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl mt-2 md:mt-3 leading-relaxed text-[#5862a5]">
+                <p className="text-base sm:text-lg md:text-xl mt-2 md:mt-3 leading-relaxed text-[#4b70f5]">
                   {value.description}
                 </p>
               </div>

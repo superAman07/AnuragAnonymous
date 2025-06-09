@@ -94,13 +94,13 @@ const Header = () => {
           }`}
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef]">
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#5668e2]">
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#4b70f5]">
               ANIMATIONS
             </a>
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#5668e2]">
+            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#4b70f5]">
               STILL IMAGES
             </a>
-            <a href="#contact" onClick={handleContactClick} className="text-5xl font-bold hover:text-[#5668e2]">
+            <a href="#contact" onClick={handleContactClick} className="text-5xl font-bold hover:text-[#4b70f5]">
               CONTACT
             </a>
           </nav>
@@ -138,7 +138,7 @@ const Header = () => {
           </h1>
           <button
             type="button"
-            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#5668e2] hover:border-[#5668e2] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
           >
             ShowReel
           </button>
