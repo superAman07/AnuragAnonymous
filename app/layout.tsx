@@ -18,25 +18,25 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/anurag.jpg",
+        url: "/logo.png",
         sizes: "32x32",
         type: "image/jpg",
       },
       {
-        url: "/anurag.jpg",
+        url: "/logo.png",
         sizes: "16x16",
         type: "image/jpg",
       },
     ],
-    shortcut: { url: "/anurag.jpg" },
+    shortcut: { url: "/logo.png" },
     apple: {
-      url: "/anurag.jpg",
+      url: "/logo.png",
       sizes: "180x180",
       type: "image/jpg",
     },
     other: {
       rel: "icon",
-      url: "/anurag.jpg",
+      url: "/logo.png",
     },
   },
 };
