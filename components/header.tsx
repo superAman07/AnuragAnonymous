@@ -148,23 +148,14 @@ const Header = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-36 text-center md:text-left">
           <div className="relative text-white flex flex-col justify-center z-30 mt-40 h-full items-center md:items-start">
-            <motion.h1
-              className="text-xl md:text-3xl font-bold tracking-wide"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
-            >
-              Hiii! <br /> this is Anurag..
-            </motion.h1>
-
-            {["Just a guy with some skills trying", "to beat Hollywood"].map(
+            {["Hiii!", "this is Anurag.."].map(
               (text, index) => (
                 <motion.p
                   key={index}
-                  className="text-sm md:text-md mt-1 font-semibold tracking-wide"
+                  className="text-xl md:text-3xl mt-1 font-semibold tracking-wide"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.5, delay: 0.5 + index * 0.5 }}
+                  transition={{ duration: 1, delay: 0.5 + index * 0.5 }}
                 >
                   {text}
                 </motion.p>
