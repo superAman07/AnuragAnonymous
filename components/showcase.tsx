@@ -15,14 +15,14 @@ export const Collections = [
     beforeImage: "/img_1.png",
     afterImage: "/img_1.png",
     title: "Compositing",
-    description: "Seamless 2D integration, Chroma key,Rotoscoping, Matte painting",
+    description: "Seamless 2D integration, Chroma key, <br/> Rotoscoping, Matte painting",
   },
   {
     id: 2,
     beforeImage: "/img_2_before.jpg",
     afterImage: "/img_2_after.jpg",
     title: "Full CG Shot",
-    description: "Realistic environments, Set extensions,Architectural visualization",
+    description: "Realistic environments, Set extensions, <br/> Architectural visualization",
   },
   {
     id: 3,
@@ -179,9 +179,10 @@ const ShowCaseAfterContent = () => {
                 <h3 className="text-3xl sm:text-3xl md:text-5xl mb-1 font-semibold text-[#efefef] transition-transform duration-300 leading-none tracking-[-0.06em]">
                   {value.title}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl leading-tight text-[#4b70f5] tracking-[-0.06em]">
-                  {value.description}
-                </p>
+                <p 
+                  dangerouslySetInnerHTML={{ __html: value.description }} 
+                  className="text-base sm:text-lg md:text-xl leading-tight text-[#4b70f5] tracking-[-0.06em]"
+                />
               </div>
             </div>
           </div>
