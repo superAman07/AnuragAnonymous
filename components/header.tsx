@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logoSrc from "@/public/logo.png";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,12 +137,14 @@ const Header = () => {
           <h1 className="text-[50px] font-bold mb-4 text-[#efefef]">
             Anonymous AnuraG - VFX Generalist
           </h1>
-          <button
-            type="button"
-            className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
-          >
-            ShowReel
-          </button>
+          <Link href="https://www.youtube.com/@AnonymousAnuraG/videos" target="_blank">
+            <button
+              type="button"
+              className="bg-transparent cursor-pointer border-[4px] text-[#efefef] text-[20px] font-bold h-[65px] w-[230px] px-8 py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            >
+              ShowReel
+            </button>
+          </Link>
         </div>
       </div>
     </header>
