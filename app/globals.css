@@ -27,9 +27,10 @@ body {
 }
 
 .hamburger-line {
-  @apply w-[40px] h-[4px] bg-white mb-1.5 last:mb-0 rounded-full;
+  @apply w-[40px] h-[4px] bg-white rounded-full;
   transform-origin: center;
   will-change: transform, opacity;
+  margin-bottom: 8px;
 }
 
 .hamburger-line:last-child {

@@ -62,11 +62,11 @@ const Header = () => {
         <div className="absolute top-8 right-5 z-[60]">
           <button
             type="button"
-            className="w-12 h-12 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
+            className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
           >
-            <div className="relative w-8 h-6 flex flex-col justify-center">
+            <div className="relative w-8 h-8 flex flex-col justify-center">
               <span
                 className={`hamburger-line transform transition-all duration-300 ease-out ${
                   isMenuOpen
