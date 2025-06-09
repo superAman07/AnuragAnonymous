@@ -146,7 +146,7 @@ const Header = () => {
 
         <div className="absolute inset-0 bg-black opacity-10"></div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-36 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-66 md:-mt-20 text-center md:text-left">
           <div className="relative text-white flex flex-col justify-center z-30 mt-40 h-full items-center md:items-start">
             {["Hiii!", "this is Anurag.."].map(
               (text, index) => (
