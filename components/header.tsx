@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logoSrc from "@/public/logo.png";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,43 +18,44 @@ const Header = () => {
   };
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsMenuOpen(false);  
-    const footer = document.querySelector('footer');
+    setIsMenuOpen(false);
+    const footer = document.querySelector("footer");
     if (footer) {
       footer.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }
   };
-   const handleMenuToggle = (e: React.MouseEvent) => {
+  const handleMenuToggle = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsMenuOpen(!isMenuOpen);  
+    setIsMenuOpen(!isMenuOpen);
   };
   useEffect(() => {
     const body = document.body;
-    const header = document.querySelector('.header-container');
-    
+    const header = document.querySelector(".header-container");
+
     if (isMenuOpen) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+
       body.style.paddingRight = `${scrollbarWidth}px`;
       if (header) {
-        (header as HTMLElement).style.paddingRight = `${scrollbarWidth + 23}px`;  
+        (header as HTMLElement).style.paddingRight = `${scrollbarWidth + 23}px`;
       }
-      body.style.overflow = 'hidden';
-    } else { 
-      body.style.overflow = '';
-      body.style.paddingRight = '';
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "";
+      body.style.paddingRight = "";
       if (header) {
-        (header as HTMLElement).style.paddingRight = '23px';
+        (header as HTMLElement).style.paddingRight = "23px";
       }
     }
     return () => {
-      body.style.overflow = '';
-      body.style.paddingRight = '';
+      body.style.overflow = "";
+      body.style.paddingRight = "";
       if (header) {
-        (header as HTMLElement).style.paddingRight = '23px';
+        (header as HTMLElement).style.paddingRight = "23px";
       }
     };
   }, [isMenuOpen]);
@@ -107,20 +109,30 @@ const Header = () => {
           }`}
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef]">
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#4b70f5]">
+            <a
+              href="#"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5]"
+            >
               ANIMATIONS
             </a>
-            <a href="#" className="text-5xl font-bold mb-8 hover:text-[#4b70f5]">
+            <a
+              href="#"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5]"
+            >
               STILL IMAGES
             </a>
-            <a href="#contact" onClick={handleContactClick} className="text-5xl font-bold hover:text-[#4b70f5]">
+            <a
+              href="#contact"
+              onClick={handleContactClick}
+              className="text-5xl font-bold hover:text-[#4b70f5]"
+            >
               CONTACT
             </a>
           </nav>
         </div>
       </div>
 
-      <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden">
+      <div className="relative h-[60vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden">
         <video
           autoPlay
           muted
@@ -133,7 +145,35 @@ const Header = () => {
         </video>
 
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+
+        <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-36 text-center md:text-left">
+          <div className="relative text-white flex flex-col justify-center z-30 mt-40 h-full items-center md:items-start">
+            <motion.h1
+              className="text-xl md:text-3xl font-bold tracking-wide"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+            >
+              Hiii! <br /> this is Anurag..
+            </motion.h1>
+
+            {["Just a guy with some skills trying", "to beat Hollywood"].map(
+              (text, index) => (
+                <motion.p
+                  key={index}
+                  className="text-sm md:text-md mt-1 font-semibold tracking-wide"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.5, delay: 0.5 + index * 0.5 }}
+                >
+                  {text}
+                </motion.p>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="absolute bottom-10 z-30 left-1/2 -translate-x-1/2 text-center">
           <Image
             onClick={handleScroll}
             src="/down-arrow.png"
@@ -145,21 +185,24 @@ const Header = () => {
         </div>
       </div>
 
-    <div className="bg-[#0f0f0f] py-10 sm:py-16 md:py-20">
-      <div className="container mx-auto w-full px-4 sm:px-6 text-center">
-        <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
-          Anonymous AnuraG - VFX Generalist
-        </h1>
-        <Link href="https://www.youtube.com/@AnonymousAnuraG/videos" target="_blank">
-          <button
-            type="button"
-            className="bg-transparent cursor-pointer border-2 sm:border-3 md:border-[4px] text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-bold h-[45px] sm:h-[55px] md:h-[65px] w-[180px] sm:w-[200px] md:w-[230px] px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
+      <div className="bg-[#0f0f0f] py-30 sm:py-16 md:py-20">
+        <div className="container mx-auto w-full px-4 sm:px-6 text-center">
+          <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
+            Anonymous AnuraG - VFX Generalist
+          </h1>
+          <Link
+            href="https://www.youtube.com/@AnonymousAnuraG/videos"
+            target="_blank"
           >
-            ShowReel
-          </button>
-        </Link>
+            <button
+              type="button"
+              className="bg-transparent cursor-pointer border-2 sm:border-3 md:border-[4px] text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-bold h-[45px] sm:h-[55px] md:h-[65px] w-[180px] sm:w-[200px] md:w-[230px] px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-none hover:bg-[#4b70f5] hover:border-[#4b70f5] hover:text-[#202020] transition-colors uppercase tracking-wider"
+            >
+              ShowReel
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
     </header>
   );
 };
