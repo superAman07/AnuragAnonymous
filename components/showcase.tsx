@@ -137,7 +137,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
 const ShowCaseAfterContent = () => {
   return (
     <section id="projects" className="p-4 md:p-5 bg-[#0f0f0f]">
-      <div className="flex flex-col items-center space-y-12 md:space-y-25">
+      <div className="flex flex-col items-center space-y-20 md:space-y-40">
         {Collections.map((value, index) => (
           <div
             key={value.id}
