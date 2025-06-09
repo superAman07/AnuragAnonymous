@@ -15,21 +15,21 @@ export const Collections = [
     beforeImage: "/img_1.png",
     afterImage: "/img_1.png",
     title: "Compositing",
-    description: "bla bla bla bla bla",
+    description: "Seamless 2D integration, Chroma key,Rotoscoping, Matte painting",
   },
   {
     id: 2,
     beforeImage: "/img_2_before.jpg",
     afterImage: "/img_2_after.jpg",
     title: "Full CG Shot",
-    description: "bla bla bla bla bla",
+    description: "Realistic environments, Set extensions,Architectural visualization",
   },
   {
     id: 3,
     beforeImage: "/img_3.png",
     afterImage: "/img_3.png",
     title: "Product Visualization",
-    description: "bla bla bla bla bla",
+    description: "Photorealistic renders, Animations",
   },
 ];
 const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
