@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Anonymous AnuraG - VFX Generalist",
@@ -18,26 +18,26 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/anurag.jpg", 
+        url: "/anurag.jpg",
         sizes: "32x32",
         type: "image/jpg",
       },
       {
-        url: "/anurag.jpg", 
+        url: "/anurag.jpg",
         sizes: "16x16",
         type: "image/jpg",
-      }
+      },
     ],
     shortcut: { url: "/anurag.jpg" },
     apple: {
-      url: "/anurag.jpg", 
+      url: "/anurag.jpg",
       sizes: "180x180",
       type: "image/jpg",
     },
     other: {
       rel: "icon",
-      url: "/anurag.jpg",     
-    }
+      url: "/anurag.jpg",
+    },
   },
 };
 
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-poppins`}
       >
         {children}
       </body>
