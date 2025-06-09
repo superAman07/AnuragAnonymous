@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <header id="home" className="relative z-0 bg-[#0f0f0f] min-h-screen">
-      <div className="flex justify-between absolute top-5 px-5  z-50 w-full h-[100px]">
+      <div className="flex fixed justify-between top-5 px-5  z-50 w-full h-[100px]">
         <div className="w-[115px] h-[100px] relative z-[100]">
           <Image
             src={logoSrc}
@@ -59,7 +59,7 @@ const Header = () => {
             priority
           />
         </div>
-        <div className="absolute top-8 right-5 z-[60]">
+        <div className="relative flex justify-center items-center  right-5 z-[60]">
           <button
             type="button"
             className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
