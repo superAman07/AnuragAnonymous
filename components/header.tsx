@@ -84,7 +84,7 @@ const Header = () => {
             priority
           />
         </Link>
-        <div className="relative flex justify-center items-center  right-5 z-[60]">
+        <div className="relative flex justify-center items-center  right-5 z-[60] ">
           <button
             type="button"
             className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
@@ -93,49 +93,57 @@ const Header = () => {
           >
             <div className="relative w-8 h-8 flex flex-col justify-center items-center">
               <span
-                className={`hamburger-line transform transition-all duration-300 ease-out ${
-                  isMenuOpen
+                className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
                     ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
                     : "translate-y-0"
-                }`}
+                  }`}
               ></span>
               <span
-                className={`hamburger-line transition-all duration-300 ease-out ${
-                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                }`}
+                className={`hamburger-line transition-all duration-300 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
               ></span>
               <span
-                className={`hamburger-line transform transition-all duration-300 ease-out ${
-                  isMenuOpen
+                className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
                     ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
                     : "translate-y-0"
-                }`}
+                  }`}
               ></span>
             </div>
           </button>
         </div>
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm h-[100dvh]  z-50 transition-transform duration-500 ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+          className={`
+    fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
+    w-full bg-black/60 backdrop-blur-sm
+    ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
+    md:left-auto md:right-0 md:w-[350px] md:bg-black/80 md:backdrop-blur-lg
+    md:translate-x-0 md:translate-y-0
+    ${isMenuOpen ? "" : "md:translate-x-full"}
+    md:transition-transform
+  `}
+          style={{
+            ...(isMenuOpen
+              ? {}
+              : { pointerEvents: "none" }),
+          }}
         >
-          <nav className="h-full flex flex-col items-center justify-center text-[#efefef]">
+          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-start md:justify-start md:pt-24 md:px-8">
             <a
               href="#"
-              className="text-5xl font-bold mb-8 hover:text-[#4b70f5]"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-2xl md:mb-6"
             >
               ANIMATIONS
             </a>
             <a
               href="#"
-              className="text-5xl font-bold mb-8 hover:text-[#4b70f5]"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-2xl md:mb-6"
             >
               STILL IMAGES
             </a>
             <a
               href="#contact"
               onClick={handleContactClick}
-              className="text-5xl font-bold hover:text-[#4b70f5]"
+              className="text-5xl font-bold hover:text-[#4b70f5] md:text-2xl"
             >
               CONTACT
             </a>
