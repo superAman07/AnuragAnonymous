@@ -116,7 +116,7 @@ const Header = () => {
             fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
             w-full bg-black/60 backdrop-blur-sm
             ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
-            md:left-auto md:right-0 md:w-[350px] md:bg-black/80 md:backdrop-blur-lg
+            md:left-auto md:right-0 md:items-center md:w-[350px] md:bg-black/80 md:backdrop-blur-lg
             md:translate-x-0 md:translate-y-0
             ${isMenuOpen ? "" : "md:translate-x-full"}
             md:transition-transform
@@ -127,23 +127,23 @@ const Header = () => {
               : { pointerEvents: "none" }),
           }}
         >
-          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-start md:justify-start md:pt-24 md:px-8">
+          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-start md:justify-center md:pt-24 md:px-8">
             <a
               href="#"
-              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-2xl md:mb-6"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               ANIMATIONS
             </a>
             <a
               href="#"
-              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-2xl md:mb-6"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               STILL IMAGES
             </a>
             <a
               href="#contact"
               onClick={handleContactClick}
-              className="text-5xl font-bold hover:text-[#4b70f5] md:text-2xl"
+              className="text-5xl font-bold hover:text-[#4b70f5] md:text-4xl"
             >
               CONTACT
             </a>
