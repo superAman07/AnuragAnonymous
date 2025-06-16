@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="bg-[#0f0f0f] text-[#efefef] py-8 md:py-16 px-4 md:px-6">
       <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
         <div className="space-y-3 md:space-y-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
-            Like what you see?
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            Anonymous AnuraG  <span className="px-3">|</span> VFX Generalist
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300">
             contact me and let&#39;s work together
