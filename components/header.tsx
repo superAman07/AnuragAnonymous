@@ -85,28 +85,31 @@ const Header = () => {
           />
         </Link>
         <div className="relative flex justify-center items-center  right-5 z-[60] ">
-          <button
+           <button
             type="button"
             className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
             onClick={handleMenuToggle}
             aria-label="Toggle menu"
           >
-            <div className="relative w-8 h-8 flex flex-col justify-center items-center">
+            <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
               <span
-                className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
-                  ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
-                  : "translate-y-0"
-                  }`}
+                className={`block w-5 h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-[7px]"
+                    : ""
+                }`}
               ></span>
               <span
-                className={`hamburger-line transition-all duration-300 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                  }`}
+                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
+                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                }`}
               ></span>
               <span
-                className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
-                  ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
-                  : "translate-y-0"
-                  }`}
+                className={`block w-5 h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
+                  isMenuOpen
+                    ? "-rotate-45 -translate-y-[7px]"
+                    : ""
+                }`}
               ></span>
             </div>
           </button>
