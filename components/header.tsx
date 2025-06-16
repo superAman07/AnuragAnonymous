@@ -94,8 +94,8 @@ const Header = () => {
             <div className="relative w-8 h-8 flex flex-col justify-center items-center">
               <span
                 className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
-                    ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
-                    : "translate-y-0"
+                  ? "rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
+                  : "translate-y-0"
                   }`}
               ></span>
               <span
@@ -104,8 +104,8 @@ const Header = () => {
               ></span>
               <span
                 className={`hamburger-line transform transition-all duration-300 ease-out ${isMenuOpen
-                    ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
-                    : "translate-y-0"
+                  ? "-rotate-45 translate-y-0 absolute top-1/2 -mt-0.5 -translate-x-0"
+                  : "translate-y-0"
                   }`}
               ></span>
             </div>
@@ -113,14 +113,14 @@ const Header = () => {
         </div>
         <div
           className={`
-    fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
-    w-full bg-black/60 backdrop-blur-sm
-    ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
-    md:left-auto md:right-0 md:w-[350px] md:bg-black/80 md:backdrop-blur-lg
-    md:translate-x-0 md:translate-y-0
-    ${isMenuOpen ? "" : "md:translate-x-full"}
-    md:transition-transform
-  `}
+            fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
+            w-full bg-black/60 backdrop-blur-sm
+            ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
+            md:left-auto md:right-0 md:w-[350px] md:bg-black/80 md:backdrop-blur-lg
+            md:translate-x-0 md:translate-y-0
+            ${isMenuOpen ? "" : "md:translate-x-full"}
+            md:transition-transform
+          `}
           style={{
             ...(isMenuOpen
               ? {}
