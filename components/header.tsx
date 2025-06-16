@@ -86,33 +86,29 @@ const Header = () => {
         </Link>
         <div className="relative flex justify-center items-center  right-5 z-[60] ">
            <button
-            type="button"
-            className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
-            onClick={handleMenuToggle}
-            aria-label="Toggle menu"
-          >
-            <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
-              <span
-                className={`block w-5 h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
-                  isMenuOpen
-                    ? "rotate-45 translate-y-[7px]"
-                    : ""
-                }`}
-              ></span>
-              <span
-                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
-                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                }`}
-              ></span>
-              <span
-                className={`block w-5 h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
-                  isMenuOpen
-                    ? "-rotate-45 -translate-y-[7px]"
-                    : ""
-                }`}
-              ></span>
-            </div>
-          </button>
+          type="button"
+          className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
+          onClick={handleMenuToggle}
+          aria-label="Toggle menu"
+        >
+          <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
+            <span
+              className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
+                isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
+              }`}
+            ></span>
+            <span
+              className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
+                isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+              }`}
+            ></span>
+            <span
+              className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
+                isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
+              }`}
+            ></span>
+          </div>
+        </button>
         </div>
         <div
           className={`
