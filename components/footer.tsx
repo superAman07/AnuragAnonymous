@@ -11,7 +11,7 @@ export default function Footer() {
           </h2>
           <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-[#4b70f5]">
             <i>
-              "Let's create something cenamatic and impactful together!"
+              &quot;Let&apos;s create something cenamatic and impactful together!&quot;
             </i>
           </h2>
         </div>
