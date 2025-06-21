@@ -129,32 +129,32 @@ const Header = () => {
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-start md:pt-24 md:px-8">
             <Link
               href="/"
-              className="text-5xl font-medium mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
             >
               Home
             </Link>
             <Link
               href="#"
-              className="text-5xl font-medium mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
             >
               Gallery
             </Link>
             <Link
               href="#"
-              className="text-5xl font-medium mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
             >
               Animations
             </Link>
             <Link
               href="#"
-              className="text-5xl font-medium mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
             >
               About
             </Link>
             <Link
               href="#contact"
               onClick={handleContactClick}
-              className="text-5xl font-medium hover:text-[#4b70f5] md:text-4xl"
+              className="text-4xl font-light hover:text-[#4b70f5] md:text-3xl"
             >
               Contact
             </Link>
