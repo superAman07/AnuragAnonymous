@@ -154,7 +154,8 @@ const Header = () => {
               Animations
             </Link>
             <Link
-              href="#"
+              href="#contact"
+              onClick={handleContactClick}
               className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
             >
               About
