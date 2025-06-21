@@ -11,7 +11,7 @@ const About = () => {
       <div className="mb-6 md:mb-0 transition-transform transform hover:scale-110">
         <NextImage
           alt="Anurag"
-          className="rounded-full border-4 border-white shadow-xl h-48 w-48 md:h-72 md:w-72"
+          className="rounded-full border-4 border-white shadow-xl h-40 w-40 md:h-40 md:w-40"
           src="/anurag.jpg"
           width={288}
           height={288}
