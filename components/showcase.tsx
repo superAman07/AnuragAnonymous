@@ -87,6 +87,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforePr
             loop
             muted
             playsInline
+            preload="auto"
           />
         ) : (
           <Image
