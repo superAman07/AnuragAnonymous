@@ -26,16 +26,18 @@ export const Collections = [
   },
   {
     id: 3,
-    beforeImage: "/img_3.png",
-    afterImage: "/img_3.png",
+    beforeImage: "/RTX_4090_before.mp4",  
+    afterImage: "/RTX_4090_after.mp4",    
     title: "Product Visualization",
-    description: "Photorealistic renders, Animations",
+    description: "Photorealistic renders,<br/>Animations",
+    isVideo: true, 
   },
 ];
-const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
+const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforeProps & { isVideo?: boolean }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
+
 
   const handleMoveStart = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -77,15 +79,26 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
       draggable="false"
     >
       <div className="absolute inset-0">
-        <Image
-          src={afterImage}
-          alt={`${title} After`}
-          className="object-cover w-full h-full"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
-          fill
-          priority
-          draggable="false"
-        />
+        {isVideo ? (
+          <video
+            src={afterImage}
+            className="object-cover w-full h-full"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <Image
+            src={afterImage}
+            alt={`${title} After`}
+            className="object-cover w-full h-full"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+            fill
+            priority
+            draggable="false"
+          />
+        )}
       </div>
 
       <div
@@ -96,15 +109,26 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeProps) => {
         }}
       >
         <div className="absolute inset-0">
-          <Image
-            src={beforeImage}
-            alt={`${title} Before`}
-            className="object-cover w-full h-full"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
-            fill
-            priority
-            draggable="false"
-          />
+          {isVideo ? (
+            <video
+              src={beforeImage}
+              className="object-cover w-full h-full"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <Image
+              src={beforeImage}
+              alt={`${title} Before`}
+              className="object-cover w-full h-full"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+              fill
+              priority
+              draggable="false"
+            />
+          )}
         </div>
       </div>
 
@@ -171,6 +195,7 @@ const ShowCaseAfterContent = () => {
                 beforeImage={value.beforeImage}
                 afterImage={value.afterImage}
                 title={value.title}
+                isVideo={value.isVideo}
               />
             </div>
 
