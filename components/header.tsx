@@ -115,7 +115,7 @@ const Header = () => {
             fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
             w-full bg-black/60 backdrop-blur-sm
             ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
-            md:left-auto md:right-0 md:items-center md:w-[250px] md:bg-black/80 md:backdrop-blur-lg
+            md:left-auto md:right-0 md:items-center md:w-[275px] md:bg-black/80 md:backdrop-blur-lg
             md:translate-x-0 md:translate-y-0
             ${isMenuOpen ? "" : "md:translate-x-full"}
             md:transition-transform
