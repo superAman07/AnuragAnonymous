@@ -6,12 +6,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pt-60 px-5 md:px-10 flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-16 text-center md:text-left bg-[#0f0f0f] rounded-lg shadow-lg"
+      className="pt-96 px-5 md:px-40 flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-16 text-center md:text-left bg-[#0f0f0f] rounded-lg shadow-lg"
     > 
       <div className="mb-6 md:mb-0 transition-transform transform hover:scale-110">
         <NextImage
           alt="Anurag"
-          className="rounded-full border-4 border-white shadow-xl h-40 w-40 md:h-40 md:w-40"
+          className="rounded-full border-4 border-white shadow-xl h-45 w-45 md:h-45 md:w-45"
           src="/anurag.jpg"
           width={288}
           height={288}
