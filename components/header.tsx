@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
-      <div className="header-container flex fixed justify-between items-center top-5 px-3  z-50 w-full h-[100px]  ">
+      <div className="header-container flex fixed justify-between items-center top-0 left-0 right-0 px-0 z-50 w-full h-[100px]">
         <Link
           href="#home"
           scroll={false}
@@ -73,7 +73,7 @@ const Header = () => {
               home.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           }}
-          className="w-[115px] h-[100px] relative z-[100]"
+          className="w-[115px] h-[100px] relative z-[100] ml-0"
         >
           <Image
             src={logoSrc}
@@ -84,7 +84,7 @@ const Header = () => {
             priority
           />
         </Link>
-        <div className="relative flex justify-center items-center  -right-6 z-[60] ">
+        <div className="relative flex justify-center items-center z-[60] mr-0 ">
            <button
           type="button"
           className="w-12 h-14 "
