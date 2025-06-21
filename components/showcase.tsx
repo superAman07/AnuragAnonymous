@@ -27,7 +27,7 @@ export const Collections = [
   {
     id: 3,
     beforeImage: "/RTX_4090_before.mp4",  
-    afterImage: "/RTX_4090_after.mp4",    
+    afterImage: "/RTX_4090_before.mp4",    
     title: "Product Visualization",
     description: "Photorealistic renders,<br/>Animations",
     isVideo: true, 
