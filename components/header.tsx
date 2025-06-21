@@ -128,6 +128,18 @@ const Header = () => {
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-start md:justify-center md:pt-24 md:px-8">
             <a
+              href="/"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+            >
+              HOME
+            </a>
+            <a
+              href="#"
+              className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
+            >
+              GALLERY
+            </a>
+            <a
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
@@ -137,7 +149,7 @@ const Header = () => {
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
-              STILL IMAGES
+              ABOUT
             </a>
             <a
               href="#contact"
