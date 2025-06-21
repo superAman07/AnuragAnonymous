@@ -48,7 +48,7 @@ const Header = () => {
       body.style.overflow = "";
       body.style.paddingRight = "";
       if (header) {
-        (header as HTMLElement).style.paddingRight = "23px";
+        (header as HTMLElement).style.paddingRight = "0px";
       }
     }
     return () => {
@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
-      <div className="header-container flex fixed justify-between items-center top-0 left-0 right-0 px-0 z-50 w-full h-[100px]">
+      <div className="header-container flex fixed justify-between items-center top-0 left-0 pr-0 right-0 px-0 z-50 w-full h-[100px]">
         <Link
           href="#home"
           scroll={false}
