@@ -192,7 +192,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-[#0f0f0f] py-12 sm:py-20 md:py-20">
+      <div className="bg-[#0f0f0f] py-14 sm:py-20 md:py-20">
         <div className="container mx-auto w-full px-4 sm:px-6 text-center">
           <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
             Anonymous AnuraG - VFX Generalist
