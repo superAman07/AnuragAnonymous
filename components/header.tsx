@@ -126,37 +126,37 @@ const Header = () => {
               : { pointerEvents: "none" }),
           }}
         >
-          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-center md:pt-24 md:px-8">
+          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-start md:pt-24 md:px-8">
             <Link
               href="/"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
-              HOME
+              Home
             </Link>
             <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
-              GALLERY
+              Gallery
             </Link>
             <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
-              ANIMATIONS
+              Animations
             </Link>
             <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
-              ABOUT
+              About
             </Link>
             <Link
               href="#contact"
               onClick={handleContactClick}
               className="text-5xl font-bold hover:text-[#4b70f5] md:text-4xl"
             >
-              CONTACT
+              Contact
             </Link>
           </nav>
         </div>
