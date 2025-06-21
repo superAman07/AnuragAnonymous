@@ -84,10 +84,10 @@ const Header = () => {
             priority
           />
         </Link>
-        <div className="relative flex justify-center items-center  right-1 z-[60] ">
+        <div className="relative flex justify-center items-center  -right-6 z-[60] ">
            <button
           type="button"
-          className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
+          className="w-12 h-14 "
           onClick={handleMenuToggle}
           aria-label="Toggle menu"
         >
