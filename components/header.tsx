@@ -61,7 +61,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header id="home" className="relative bg-[#0f0f0f] min-h-screen">
+    <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
       <div className="header-container flex fixed justify-between items-center top-5 px-5  z-50 w-full h-[100px]  ">
         <Link
           href="#home"
@@ -192,7 +192,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-[#0f0f0f] py-10 sm:py-20 md:py-20">
+      <div className="bg-[#0f0f0f] py-12 sm:py-20 md:py-20">
         <div className="container mx-auto w-full px-4 sm:px-6 text-center">
           <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
             Anonymous AnuraG - VFX Generalist
