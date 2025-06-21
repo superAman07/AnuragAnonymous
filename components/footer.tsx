@@ -72,7 +72,7 @@ export default function Footer() {
           </Link> */}
         </div>
       </div>
-      <p className="flex justify-start text-[8px] md:text-sm italic">
+      <p className="flex justify-start text-[5px] md:text-sm italic">
         &copy; 2025 AnonymousFX. All rights reserved.
       </p>
     </footer>
