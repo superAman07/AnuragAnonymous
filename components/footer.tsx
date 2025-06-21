@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
 
         <div className="space-y-0 md:space-y-0">
-          <p className="pb-1 font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl italic">Contact Info: </p>
+          <p className="pb-3 font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl italic">Contact Info: </p>
           <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl">+916386699363</p>
           <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl">anuragpal63866@gmail.com</p>
         </div>
