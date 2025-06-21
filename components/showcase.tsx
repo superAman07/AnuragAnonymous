@@ -12,8 +12,8 @@ interface BeforeProps {
 export const Collections = [
   {
     id: 1,
-    beforeImage: "/img_1.png",
-    afterImage: "/img_1.png",
+    beforeImage: "/compositing_before.jpg",
+    afterImage: "/compositing_after.jpg",
     title: "Compositing",
     description: "Seamless 2D integration, Chroma key, <br/> Rotoscoping, Matte painting",
   },
