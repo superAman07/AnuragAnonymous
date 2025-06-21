@@ -87,7 +87,7 @@ const Header = () => {
         <div className="relative flex justify-center items-center z-[60] mr-0 ">
            <button
           type="button"
-          className="w-12 h-14 "
+          className="w-12 h-14 cursor-pointer"
           onClick={handleMenuToggle}
           aria-label="Toggle menu"
         >
