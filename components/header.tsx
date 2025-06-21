@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
-      <div className="header-container flex fixed justify-between items-center top-5 px-5  z-50 w-full h-[100px]  ">
+      <div className="header-container flex fixed justify-between items-center top-5 px-3  z-50 w-full h-[100px]  ">
         <Link
           href="#home"
           scroll={false}
@@ -84,7 +84,7 @@ const Header = () => {
             priority
           />
         </Link>
-        <div className="relative flex justify-center items-center  right-5 z-[60] ">
+        <div className="relative flex justify-center items-center  right-1 z-[60] ">
            <button
           type="button"
           className="w-12 h-14 flex flex-col cursor-pointer justify-center items-center focus:outline-none group relative"
