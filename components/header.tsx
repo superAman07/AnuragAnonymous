@@ -127,37 +127,37 @@ const Header = () => {
           }}
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-center md:pt-24 md:px-8">
-            <a
+            <Link
               href="/"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               HOME
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               GALLERY
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               ANIMATIONS
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
             >
               ABOUT
-            </a>
-            <a
+            </Link>
+            <Link
               href="#contact"
               onClick={handleContactClick}
               className="text-5xl font-bold hover:text-[#4b70f5] md:text-4xl"
             >
               CONTACT
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
