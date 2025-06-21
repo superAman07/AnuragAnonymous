@@ -41,7 +41,7 @@ const Header = () => {
 
       body.style.paddingRight = `${scrollbarWidth}px`;
       if (header) {
-        (header as HTMLElement).style.paddingRight = `${scrollbarWidth + 23}px`;
+        (header as HTMLElement).style.paddingRight = `${scrollbarWidth}px`;
       }
       body.style.overflow = "hidden";
     } else {
@@ -55,7 +55,7 @@ const Header = () => {
       body.style.overflow = "";
       body.style.paddingRight = "";
       if (header) {
-        (header as HTMLElement).style.paddingRight = "23px";
+        (header as HTMLElement).style.paddingRight = "0px";
       }
     };
   }, [isMenuOpen]);
