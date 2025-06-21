@@ -5,14 +5,10 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export default function ProjectsPage() {
-  const [activeReel, setActiveReel] = useState(0)
-  const [filmGrain, setFilmGrain] = useState(0)
+  const [activeReel, setActiveReel] = useState(0);
   const [sparkles, setSparkles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([])
 
-  useEffect(() => { 
-    const grainInterval = setInterval(() => {
-      setFilmGrain((prev) => (prev + 1) % 100)
-    }, 100)
+  useEffect(() => {
  
     const reelInterval = setInterval(() => {
       setActiveReel((prev) => (prev + 1) % 4)
@@ -31,8 +27,7 @@ export default function ProjectsPage() {
     generateSparkles()
     const sparkleInterval = setInterval(generateSparkles, 5000)
 
-    return () => {
-      clearInterval(grainInterval)
+    return () => { 
       clearInterval(reelInterval)
       clearInterval(sparkleInterval)
     }
