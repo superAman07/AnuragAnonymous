@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0f0f0f] text-[#efefef] py-8 md:pb-0 px-4 md:px-6">
       <div className="max-w-4xl mx-auto text-center lg:pb-32 md:20 space-y-6 md:space-y-8">
-        <div className="space-y-0 md:space-y-0">
+        <div className="space-y-0 mb-11 md:space-y-0">
           <h2 className="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-bold">
             Anonymous AnuraG  <span className="px-3">|</span> VFX Generalist
           </h2>
