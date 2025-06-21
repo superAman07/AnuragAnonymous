@@ -181,7 +181,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforePr
 
 const ShowCaseAfterContent = () => {
   return (
-    <section id="projects" className="p-4 md:p-5 bg-[#0f0f0f]">
+    <section id="projects" className="p-4 lg:mt-48 md:mt-48 md:p-5 bg-[#0f0f0f]">
       <div className="flex flex-col items-center space-y-20 md:space-y-40">
         {Collections.map((value, index) => (
           <div
