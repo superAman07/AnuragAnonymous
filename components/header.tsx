@@ -85,45 +85,47 @@ const Header = () => {
           />
         </Link>
         <div className="relative flex justify-center items-center z-[60] mr-0 ">
-           <button
-          type="button"
-          className="w-12 h-14 cursor-pointer"
-          onClick={handleMenuToggle}
-          aria-label="Toggle menu"
-        >
-          <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
-            <span
-              className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
-                isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
-              }`}
-            ></span>
-            <span
-              className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
-                isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-              }`}
-            ></span>
-            <span
-              className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
-                isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
-              }`}
-            ></span>
-          </div>
-        </button>
+          <button
+            type="button"
+            className="w-12 h-14 cursor-pointer"
+            onClick={handleMenuToggle}
+            aria-label="Toggle menu"
+          >
+            <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
+              <span
+                className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
+                  }`}
+              ></span>
+              <span
+                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
+              ></span>
+              <span
+                className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
+                  }`}
+              ></span>
+            </div>
+          </button>
         </div>
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 z-40 md:block hidden"
+            onClick={() => setIsMenuOpen(false)}
+            style={{ background: "transparent" }}
+          />
+        )}
         <div
           className={`
             fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
             w-full bg-black/60 backdrop-blur-sm
             ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
-            md:left-auto md:right-0 md:items-center md:w-[275px] md:bg-black/80 md:backdrop-blur-lg
+            md:left-auto md:right-0 md:w-[250px] md:bg-black/80 md:backdrop-blur-lg
             md:translate-x-0 md:translate-y-0
             ${isMenuOpen ? "" : "md:translate-x-full"}
             md:transition-transform
           `}
           style={{
-            ...(isMenuOpen
-              ? {}
-              : { pointerEvents: "none" }),
+            ...(isMenuOpen ? {} : { pointerEvents: "none" }),
           }}
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-start md:pt-24 md:px-8">
