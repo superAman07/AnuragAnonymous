@@ -126,7 +126,7 @@ const Header = () => {
               : { pointerEvents: "none" }),
           }}
         >
-          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-start md:justify-center md:pt-24 md:px-8">
+          <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-center md:pt-24 md:px-8">
             <a
               href="/"
               className="text-5xl font-bold mb-8 hover:text-[#4b70f5] md:text-4xl md:mb-14"
