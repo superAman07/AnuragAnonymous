@@ -8,9 +8,7 @@ export default function ProjectsPage() {
   const [sparkles, setSparkles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([])
 
   useEffect(() => {
- 
     
-
     const generateSparkles = () => {
       const newSparkles = Array.from({ length: 15 }, (_, i) => ({
         id: i,
