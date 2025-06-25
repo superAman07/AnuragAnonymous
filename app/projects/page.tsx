@@ -1,18 +1,15 @@
 "use client"
 
-import { ArrowLeft, Camera, Film, Sparkles, Eye, Play, Palette } from "lucide-react"
+import { ArrowLeft, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-export default function ProjectsPage() {
-  const [activeReel, setActiveReel] = useState(0);
+export default function ProjectsPage() { 
   const [sparkles, setSparkles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([])
 
   useEffect(() => {
  
-    const reelInterval = setInterval(() => {
-      setActiveReel((prev) => (prev + 1) % 4)
-    }, 3000)
+    
 
     const generateSparkles = () => {
       const newSparkles = Array.from({ length: 15 }, (_, i) => ({
@@ -27,42 +24,13 @@ export default function ProjectsPage() {
     generateSparkles()
     const sparkleInterval = setInterval(generateSparkles, 5000)
 
-    return () => { 
-      clearInterval(reelInterval)
+    return () => {  
       clearInterval(sparkleInterval)
     }
   }, [])
 
-  const reels = [
-    {
-      name: "CINEMATIC SEQUENCES",
-      status: "IN POST-PRODUCTION",
-      icon: Film,
-      color: "from-amber-400 to-orange-500",
-    },
-    {
-      name: "VISUAL EFFECTS REEL",
-      status: "RENDERING",
-      icon: Sparkles,
-      color: "from-purple-400 to-pink-500",
-    },
-    {
-      name: "MOTION GRAPHICS",
-      status: "COMPOSITING",
-      icon: Palette,
-      color: "from-cyan-400 to-blue-500",
-    },
-    {
-      name: "CHARACTER ANIMATION",
-      status: "FINAL TOUCHES",
-      icon: Play,
-      color: "from-green-400 to-emerald-500",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-[#efefef] relative overflow-hidden">
-      {/* Film Grain Overlay */}
       <div
         className="absolute inset-0 opacity-20 pointer-events-none z-10"
         style={{
@@ -70,11 +38,8 @@ export default function ProjectsPage() {
           animation: `grain 0.1s steps(10) infinite`,
         }}
       />
-
-      {/* Cinematic Vignette */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/60" />
 
-      {/* Floating Sparkles */}
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
@@ -90,14 +55,12 @@ export default function ProjectsPage() {
         </div>
       ))}
 
-      {/* Cinematic Light Rays */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-amber-400/50 via-transparent to-transparent transform rotate-12 animate-pulse" />
         <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-purple-400/50 via-transparent to-transparent transform -rotate-12 animate-pulse delay-1000" />
         <div className="absolute top-0 left-2/3 w-1 h-full bg-gradient-to-b from-cyan-400/50 via-transparent to-transparent transform rotate-6 animate-pulse delay-2000" />
       </div>
 
-      {/* Back Button */}
       <div className="absolute top-8 left-8 z-50">
         <Link
           href="/"
@@ -108,10 +71,8 @@ export default function ProjectsPage() {
         </Link>
       </div>
 
-      {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen px-4 relative z-20">
         <div className="text-center space-y-12 max-w-6xl mx-auto">
-          {/* Cinematic Title */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 via-purple-500/20 to-cyan-500/20 blur-xl animate-pulse" />
             <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8">
@@ -120,7 +81,6 @@ export default function ProjectsPage() {
               </span>
             </h1>
 
-            {/* Film Strip Decoration */}
             <div className="flex justify-center mt-6">
               <div className="w-64 h-8 bg-gradient-to-r from-transparent via-gray-800 to-transparent relative">
                 <div className="absolute inset-y-0 left-0 w-4 bg-gray-700 border-r-2 border-gray-600" />
@@ -136,7 +96,6 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          {/* Coming Soon Message */}
           <div className="text-center space-y-6">
             <p className="text-2xl md:text-3xl font-light tracking-wide text-gray-300">
               VISUAL MASTERPIECES IN DEVELOPMENT
