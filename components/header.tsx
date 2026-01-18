@@ -86,7 +86,7 @@ const Header = () => {
           />
         </Link>
 
-        <nav className="hidden lg:flex justify-end items-center flex-grow gap-8 xl:gap-12">
+        <nav className="hidden lg:flex justify-end items-center flex-grow gap-8 xl:gap-12 mr-14">
           {menuItems.map((item) => (
             <Link
               key={item.label}
