@@ -38,30 +38,20 @@ const Header = () => {
 
   useEffect(() => {
     const body = document.body;
-    const header = document.querySelector(".header-container");
 
     if (isMenuOpen) {
       const scrollbarWidth =
         window.innerWidth - document.documentElement.clientWidth;
 
       body.style.paddingRight = `${scrollbarWidth}px`;
-      if (header) {
-        (header as HTMLElement).style.paddingRight = `${scrollbarWidth}px`;
-      }
       body.style.overflow = "hidden";
     } else {
       body.style.overflow = "";
       body.style.paddingRight = "";
-      if (header) {
-        (header as HTMLElement).style.paddingRight = "0px";
-      }
     }
     return () => {
       body.style.overflow = "";
       body.style.paddingRight = "";
-      if (header) {
-        (header as HTMLElement).style.paddingRight = "0px";
-      }
     };
   }, [isMenuOpen]);
 
@@ -74,7 +64,6 @@ const Header = () => {
   return (
     <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
       <div className="header-container flex fixed justify-between items-center top-0 left-0 right-0 px-4 md:px-6 lg:px-8 z-50 w-full h-[100px]">
-        {/* Logo */}
         <Link
           href="#home"
           scroll={false}
@@ -97,8 +86,7 @@ const Header = () => {
           />
         </Link>
 
-        {/* Desktop Menu (hidden on mobile/tablet, visible on lg+) */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
+        <nav className="hidden lg:flex justify-end items-center flex-grow gap-8 xl:gap-12">
           {menuItems.map((item) => (
             <Link
               key={item.label}
@@ -108,13 +96,13 @@ const Header = () => {
               onMouseLeave={() => setHoveredItem(null)}
               className={`text-[#efefef] text-base xl:text-lg font-medium tracking-wide transition-all duration-300 relative ${
                 hoveredItem && hoveredItem !== item.label
-                  ? "opacity-40"
+                  ? "opacity-40 blur-[0.5px]"
                   : "opacity-100"
               } hover:text-[#4b70f5]`}
             >
               {item.label}
               <span
-                className={`absolute -bottom-1 left-0 h-[2px] bg-[#4b70f5] transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-[1.5px] bg-gradient-to-r from-[#4b70f5] to-[#7b9ff7] transition-all duration-300 ${
                   hoveredItem === item.label ? "w-full" : "w-0"
                 }`}
               />
@@ -132,19 +120,16 @@ const Header = () => {
           >
             <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
               <span
-                className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
-                  isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
-                }`}
+                className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
+                  }`}
               ></span>
               <span
-                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
-                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                }`}
+                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
               ></span>
               <span
-                className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
-                  isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
-                }`}
+                className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
+                  }`}
               ></span>
             </div>
           </button>
