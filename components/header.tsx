@@ -234,7 +234,7 @@ const Header = () => {
           >
             <button
               type="button"
-className="bg-[#efefef]/5 backdrop-blur-sm cursor-pointer rounded-full border border-[#efefef]/50 text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-medium h-[45px] sm:h-[55px] md:h-[60px] w-[180px] sm:w-[200px] md:w-[220px] px-6 hover:bg-[#efefef] hover:text-black transition-all duration-300 tracking-wider hover:shadow-[0_0_20px_rgba(239,239,239,0.3)]"            >
+className="bg-[#efefef]/5 backdrop-blur-sm cursor-pointer rounded-full border border-[#efefef]/50 text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-medium h-[45px] sm:h-[55px] md:h-[60px] w-[180px] sm:w-[200px] md:w-[220px] px-6 hover:bg-[#efefef] hover:text-black transition-all duration-300 tracking-wider hover:shadow-[0_0_20px_rgba(239,239,239,0.3)] uppercase"            >
               ShowReel
             </button>
           </Link>
