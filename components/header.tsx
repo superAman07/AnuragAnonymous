@@ -225,7 +225,7 @@ const Header = () => {
       {/* Bottom Section */}
       <div className="bg-[#0f0f0f] py-4 sm:py-6 md:py-6">
         <div className="container mx-auto w-full px-4 sm:px-6 text-center">
-          <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
+          <h1 className="text-[25px] sm:text-[36px] md:text-[45px] font-semibold mb-4 text-[#efefef] leading-tight">
             Anonymous AnuraG - VFX Generalist
           </h1>
           <Link
