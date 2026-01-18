@@ -193,9 +193,6 @@ const Header = () => {
         </video>
 
         <div className="absolute inset-0 bg-black opacity-10"></div>
-
-        
-
         <div className="absolute bottom-10 z-30 left-1/2 -translate-x-1/2 text-center">
           <Image
             onClick={handleScroll}
