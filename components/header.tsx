@@ -171,7 +171,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="relative h-[60vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden">
+      <div className="relative h-[70vh] sm:h-[70vh] md:h-[80vh] w-full overflow-hidden">
         <video
           autoPlay
           muted
@@ -213,7 +213,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="bg-[#0f0f0f] py-14 sm:py-20 md:py-20">
+      <div className="bg-[#0f0f0f] py-4 sm:py-6 md:py-6">
         <div className="container mx-auto w-full px-4 sm:px-6 text-center">
           <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
             Anonymous AnuraG - VFX Generalist
