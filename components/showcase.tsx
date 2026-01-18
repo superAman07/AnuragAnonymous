@@ -65,7 +65,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforePr
   return (
     <div
       ref={sliderRef}
-      className="relative w-full max-w-[590px] aspect-[590/440] cursor-col-resize overflow-hidden mx-auto"
+      className="relative w-full max-w-[590px] xl:max-w-[750px] 2xl:max-w-[900px] aspect-[590/440] cursor-col-resize overflow-hidden mx-auto"
       onMouseDown={handleMoveStart}
       onMouseUp={handleMoveEnd}
       onMouseLeave={handleMoveEnd}
@@ -94,7 +94,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforePr
             src={afterImage}
             alt={`${title} After`}
             className="object-cover w-full h-full"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (min-width: 1536px) 900px, (min-width: 1280px) 750px, 590px"
             fill
             priority
             draggable="false"
@@ -124,7 +124,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, isVideo }: BeforePr
               src={beforeImage}
               alt={`${title} Before`}
               className="object-cover w-full h-full"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 590px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (min-width: 1536px) 900px, (min-width: 1280px) 750px, 590px"
               fill
               priority
               draggable="false"
