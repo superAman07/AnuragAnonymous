@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
   const handleScroll = () => {
     const nextSection = document.getElementById("projects");
     if (nextSection) {
@@ -16,6 +18,7 @@ const Header = () => {
       });
     }
   };
+
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(false);
@@ -27,10 +30,12 @@ const Header = () => {
       });
     }
   };
+
   const handleMenuToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(!isMenuOpen);
   };
+
   useEffect(() => {
     const body = document.body;
     const header = document.querySelector(".header-container");
@@ -60,9 +65,16 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
+  const menuItems = [
+    { href: "/", label: "Home", onClick: null },
+    { href: "/gallery", label: "Gallery", onClick: null },
+    { href: "", label: "About", onClick: handleContactClick },
+  ];
+
   return (
     <header id="home" className="relative bg-[#0f0f0f] h-[100dvh]">
-      <div className="header-container flex fixed justify-between items-center top-0 left-0 pr-0 right-0 px-0 z-50 w-full h-[100px]">
+      <div className="header-container flex fixed justify-between items-center top-0 left-0 right-0 px-4 md:px-6 lg:px-8 z-50 w-full h-[100px]">
+        {/* Logo */}
         <Link
           href="#home"
           scroll={false}
@@ -73,18 +85,45 @@ const Header = () => {
               home.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           }}
-          className="w-[115px] h-[100px] relative z-[100] ml-0"
+          className="w-[115px] h-[100px] relative z-[100]"
         >
           <Image
             src={logoSrc}
             alt="Logo"
             width={115}
             height={100}
-            className="object-contain mix-blend-color-dodge z-[100]"
+            className="object-contain mix-blend-color-dodge"
             priority
           />
         </Link>
-        <div className="relative flex justify-center items-center z-[60] mr-0 ">
+
+        {/* Desktop Menu (hidden on mobile/tablet, visible on lg+) */}
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
+          {menuItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={item.onClick || undefined}
+              onMouseEnter={() => setHoveredItem(item.label)}
+              onMouseLeave={() => setHoveredItem(null)}
+              className={`text-[#efefef] text-base xl:text-lg font-medium tracking-wide transition-all duration-300 relative ${
+                hoveredItem && hoveredItem !== item.label
+                  ? "opacity-40"
+                  : "opacity-100"
+              } hover:text-[#4b70f5]`}
+            >
+              {item.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-[2px] bg-[#4b70f5] transition-all duration-300 ${
+                  hoveredItem === item.label ? "w-full" : "w-0"
+                }`}
+              />
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile/Tablet Hamburger Menu (visible on mobile and tablet only) */}
+        <div className="relative flex justify-center items-center z-[60] lg:hidden">
           <button
             type="button"
             className="w-12 h-14 cursor-pointer"
@@ -93,90 +132,75 @@ const Header = () => {
           >
             <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-[5px]">
               <span
-                className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
-                  }`}
+                className={`block h-1 bg-[#efefef] self-start rounded-sm transform transition-all duration-300 ease-out ${
+                  isMenuOpen ? "w-8 rotate-45 translate-y-[6px] translate-x-0" : "w-5"
+                }`}
               ></span>
               <span
-                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                  }`}
+                className={`block w-8 h-1 bg-[#efefef] rounded-sm ml-auto transition-all duration-300 ease-out ${
+                  isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                }`}
               ></span>
               <span
-                className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
-                  }`}
+                className={`block h-1 bg-[#efefef] self-end rounded-sm transform transition-all duration-300 ease-out ${
+                  isMenuOpen ? "w-8 -rotate-45 -translate-y-[12px] translate-x-0" : "w-5"
+                }`}
               ></span>
             </div>
           </button>
         </div>
+
+        {/* Mobile/Tablet Menu Overlay */}
         {isMenuOpen && (
           <div
-            className="fixed inset-0 z-40 md:block hidden"
+            className="fixed inset-0 z-40 lg:hidden"
             onClick={() => setIsMenuOpen(false)}
             style={{ background: "transparent" }}
           />
         )}
+
+        {/* Mobile/Tablet Menu Panel */}
         <div
           className={`
-            fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500
+            fixed top-0 left-0 h-[100dvh] z-50 transition-transform duration-500 lg:hidden
             w-full bg-black/60 backdrop-blur-sm
             ${isMenuOpen ? "translate-x-0" : "-translate-y-full"}
             md:left-auto md:right-0 md:w-[250px] md:bg-black/80 md:backdrop-blur-lg
             md:translate-x-0 md:translate-y-0
             ${isMenuOpen ? "" : "md:translate-x-full"}
-            md:transition-transform
           `}
           style={{
             ...(isMenuOpen ? {} : { pointerEvents: "none" }),
           }}
         >
           <nav className="h-full flex flex-col items-center justify-center text-[#efefef] md:items-center md:justify-start md:pt-24 md:px-8">
-            <Link
-              href="/"
-              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
-            >
-              Home
-            </Link>
-            <Link
-              href="/gallery"
-              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
-            >
-              Gallery
-            </Link>
-            <Link
-              href="/projects"
-              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#"
-              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
-            >
-              Animations
-            </Link>
-            <Link
-              href="#contact"
-              onClick={handleContactClick}
-              className="text-4xl font-light mb-8 hover:text-[#4b70f5] md:text-3xl md:mb-10"
-            >
-              About
-            </Link>
-            <Link
-              href="#contact"
-              onClick={handleContactClick}
-              className="text-4xl font-light hover:text-[#4b70f5] md:text-3xl"
-            >
-              Contact
-            </Link>
+            {menuItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  if (item.onClick) {
+                    item.onClick(e);
+                  }
+                  setIsMenuOpen(false);
+                }}
+                className="text-4xl font-light mb-8 hover:text-[#4b70f5] transition-colors duration-300 md:text-3xl md:mb-10"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>
 
+      {/* Video Section */}
       <div className="relative h-[70vh] sm:h-[70vh] md:h-[80vh] w-full overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-[1]"
           id="background-video"
         >
@@ -213,6 +237,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Bottom Section */}
       <div className="bg-[#0f0f0f] py-4 sm:py-6 md:py-6">
         <div className="container mx-auto w-full px-4 sm:px-6 text-center">
           <h1 className="text-[28px] sm:text-[40px] md:text-[50px] font-bold mb-4 text-[#efefef] leading-tight">
