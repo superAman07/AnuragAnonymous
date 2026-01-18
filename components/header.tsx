@@ -194,21 +194,7 @@ const Header = () => {
 
         <div className="absolute inset-0 bg-black opacity-10"></div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-66 md:-mt-20 text-center md:text-left">
-          <div className="relative text-[#efefef] flex flex-col justify-center z-30 mt-40 h-full items-center md:items-start">
-            {["Hiii!", "this is Anurag.."].map((text, index) => (
-              <motion.p
-                key={index}
-                className="text-xl md:text-3xl mt-1 font-semibold tracking-wide"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 + index * 0.5 }}
-              >
-                {text}
-              </motion.p>
-            ))}
-          </div>
-        </div>
+        
 
         <div className="absolute bottom-10 z-30 left-1/2 -translate-x-1/2 text-center">
           <Image
@@ -234,7 +220,7 @@ const Header = () => {
           >
             <button
               type="button"
-className="bg-[#efefef]/5 backdrop-blur-sm cursor-pointer rounded-full border border-[#efefef]/50 text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-medium h-[45px] sm:h-[55px] md:h-[60px] w-[180px] sm:w-[200px] md:w-[220px] px-6 hover:bg-[#efefef] hover:text-black transition-all duration-300 tracking-wider hover:shadow-[0_0_20px_rgba(239,239,239,0.3)] uppercase"            >
+              className="bg-[#efefef]/5 backdrop-blur-sm cursor-pointer rounded-full border border-[#efefef]/50 text-[#efefef] text-[16px] sm:text-[18px] md:text-[20px] font-medium h-[45px] sm:h-[55px] md:h-[60px] w-[180px] sm:w-[200px] md:w-[220px] px-6 hover:bg-[#efefef] hover:text-black transition-all duration-300 tracking-wider hover:shadow-[0_0_20px_rgba(239,239,239,0.3)] uppercase"            >
               ShowReel
             </button>
           </Link>
